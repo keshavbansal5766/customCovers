@@ -4,20 +4,22 @@ import { Check, Star } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="bg-blue-500">
+    <div className="bg-slate-50 grainy-light">
       <section>
-        <MaxWidthWrapper className="pb-24 text-white pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
+        <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
           {/* grid columns 1 and 2 */}
-          <div className="col-span-2 bg-yellow-300 px-6 lg:pt-4">
-            <div className="relative bg-sky-400 mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
-              {/* Application Image */}
-              <div className="absolute bg-pink-400 w-28 left-0 -top-20 hidden lg:block">
+          <div className="col-span-2 px-6 lg:pt-4">
+            <div className="relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
+              {/* Application Image and white gradient overlay */}
+              <div className="absolute w-28 left-0 -top-20 hidden lg:block">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t via-slate-50/50 from-slate-50 h-28" />
                 <img src="/snake-1.png" alt="" className="w-full" />
               </div>
               {/* Application heading */}
-              <h1 className="relative w-fit !leading-tight tracking-tight mt-16 font-bold text-gray-900 text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="relative w-fit !leading-tight tracking-tight text-balance mt-16 font-bold text-gray-900 text-5xl md:text-6xl lg:text-7xl">
                 Your Image on a{" "}
-                <span className="bg-green-600 px-1">Custom</span> Phone Case
+                <span className="bg-green-600 px-2 text-white">Custom</span>{" "}
+                Phone Case
               </h1>
               {/* About application */}
               <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
@@ -27,7 +29,7 @@ export default function Home() {
                 phone case.
               </p>
               {/* products features */}
-              <ul className="bg-black mt-8 space-y-2 text-left font-medium flex flex-col items-center sm:items-start">
+              <ul className="mt-8 space-y-2 text-left font-medium flex flex-col items-center sm:items-start">
                 <div className="space-y-2">
                   <li className="flex gap-1.5 items-center text-left">
                     <Check className="h-5 w-5 shrink-0 text-green-600" />
@@ -43,7 +45,7 @@ export default function Home() {
                   </li>
                 </div>
               </ul>
-              <div className="bg-amber-600 mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5">
+              <div className="mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5">
                 {/* Users image */}
                 <div className="flex -space-x-4">
                   <img
@@ -89,13 +91,13 @@ export default function Home() {
             </div>
           </div>
           {/* grid-column-3 */}
-          <div className="bg-purple-400 col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit">
+          <div className="col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit">
             {/* custom-phone-image-section */}
             <div className="relative md:max-w-xl">
               {/* arrow image */}
               <img
                 src="/your-image.png"
-                className="absolute w-40 lg:w-52 left-56 -top-20 select-none hidden sm:block"
+                className="absolute w-40 lg:w-52 left-56 -top-20 select-none hidden sm:block lg:hidden xl:block"
                 alt=""
               />
               {/* line image */}

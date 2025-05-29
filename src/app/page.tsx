@@ -1,11 +1,13 @@
 import { Icons } from "@/components/Icons";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phone from "@/components/Phone";
-import { Check, Star } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { ArrowRight, Check, Star } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="bg-slate-50 grainy-light">
+    <div className="bg-slate-50">
       {/* section-1 */}
       <section>
         <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
@@ -115,8 +117,8 @@ export default function Home() {
         </MaxWidthWrapper>
       </section>
       {/* section-2 value proposition (reviews) */}
-      <section className="bg-slate-500 py-24 text-white font-semibold">
-        <MaxWidthWrapper className="bg-red-500 flex flex-col items-center gap-16 sm:gap-32">
+      <section className="bg-slate-100 py-24">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
           {/* Heading customer reviews and underline and snake image */}
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
             <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
@@ -134,11 +136,11 @@ export default function Home() {
               alt=""
             />
           </div>
-          <div className="bg-pink-300 mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
             {/* customer-1 review */}
-            <div className="bg-cyan-800 flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
               {/* Stars container */}
-              <div className="bg-amber-800 flex gap-0.5 mb-2">
+              <div className="flex gap-0.5 mb-2">
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
@@ -146,7 +148,7 @@ export default function Home() {
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
               </div>
               {/* Paragraph container */}
-              <div className="bg-purple-950 text-lg leading-8">
+              <div className="text-lg leading-8">
                 <p>
                   "The case feels durable and I even got a compliment on the
                   design. Had the case for two and a half months now and{" "}
@@ -158,7 +160,7 @@ export default function Home() {
                 </p>
               </div>
               {/* customer image, name and verified container  */}
-              <div className="flex gap-4 mt-2 bg-yellow-600">
+              <div className="flex gap-4 mt-2">
                 <img
                   src="/users/user-1.png"
                   className="rounded-full h-12 w-12 object-cover"
@@ -174,9 +176,9 @@ export default function Home() {
               </div>
             </div>
             {/* customer-2 review */}
-            <div className="bg-cyan-800 flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+            <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
               {/* Stars container */}
-              <div className="bg-amber-800 flex gap-0.5 mb-2">
+              <div className="flex gap-0.5 mb-2">
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
@@ -184,7 +186,7 @@ export default function Home() {
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
               </div>
               {/* Paragraph container */}
-              <div className="bg-purple-950 text-lg leading-8">
+              <div className="text-lg leading-8">
                 <p>
                   "I usually keep my phone together with my keys in my pocket
                   and that led to some pretty heavy scratchmarks on all of my
@@ -197,7 +199,7 @@ export default function Home() {
                 </p>
               </div>
               {/* customer image, name and verified container  */}
-              <div className="flex gap-4 mt-2 bg-yellow-600">
+              <div className="flex gap-4 mt-2">
                 <img
                   src="/users/user-4.jpg"
                   className="rounded-full h-12 w-12 object-cover"
@@ -215,7 +217,77 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </section>
+      {/* section-3 */}
+      <section>
+        <MaxWidthWrapper className="font-semibold">
+          {/* Heading about what is the working of this application */}
+          <div className="mb-12 px-6 lg:px-8">
+            <div className=" mx-auto max-w-2xl sm:text-center">
+              <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+                Upload your photo and get{" "}
+                <span className="relative px-2 !leading-snug bg-green-600 text-white">
+                  your own case{" "}
+                  <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-6 text-green-500" />{" "}
+                </span>
+                now
+              </h2>
+            </div>
+          </div>
+          {/* converting image onto phone case show */}
+          <div className=" mx-auto max-w-6xl px-6 lg:px-8">
+            <div className=" relative flex flex-col items-center md:grid grid-cols-2 gap-40">
+              {/* arrow image */}
+              <img
+                src="/arrow.png"
+                className=" absolute top-[25rem] md:top-1/2 z-10 left-1/2 -translate-x-1/2 rotate-90 md:rotate-0"
+                alt=""
+              />
+              {/* image-container */}
+              <div className="relative h-80 md:h-full w-full md:justify-self-end max-w-sm rounded-xl bg-gray-900/5 ring-inset ring-gray-900/10 lg:rounded-2xl">
+                <img
+                  src="/horse.jpg"
+                  className="rounded-md object-cover bg-white shadow-2xl ring-1 ring-gray-900/10 h-full w-full"
+                  alt=""
+                />
+              </div>
+              {/* Phone case with custom image show */}
+              <Phone className="w-60" imgSrc="/horse_phone.jpg" />
+            </div>
+          </div>
+          {/* what is good about our products and button of create case */}
+          <ul className="mx-auto mt-12 max-w-prose sm:text-lg space-y-2 w-fit">
+            <li className="w-fit">
+              <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
+              High-quality silicon material
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
+              Scratch- and fingerprint resistant coating
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
+              Wireless charging compatible
+            </li>
+            <li className="w-fit">
+              <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
+              5y print warranty
+            </li>
+            {/* Create case button */}
+            <div className="flex justify-center">
+              <Link
+                className={buttonVariants({
+                  size: "lg",
+                  className: "mx-auto mt-8",
+                })}
+                href="/configure/upload"
+              >
+                Create your case now <ArrowRight className="h-4 w-4 ml-1.5" />
+              </Link>
+            </div>
+          </ul>
+        </MaxWidthWrapper>
+      </section>
     </div>
   );
 }
-// 1:20:42
+// 2:02:34

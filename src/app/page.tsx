@@ -1,3 +1,4 @@
+import { Icons } from "@/components/Icons";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phone from "@/components/Phone";
 import { Check, Star } from "lucide-react";
@@ -5,6 +6,7 @@ import { Check, Star } from "lucide-react";
 export default function Home() {
   return (
     <div className="bg-slate-50 grainy-light">
+      {/* section-1 */}
       <section>
         <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
           {/* grid columns 1 and 2 */}
@@ -112,6 +114,108 @@ export default function Home() {
           </div>
         </MaxWidthWrapper>
       </section>
+      {/* section-2 value proposition (reviews) */}
+      <section className="bg-slate-500 py-24 text-white font-semibold">
+        <MaxWidthWrapper className="bg-red-500 flex flex-col items-center gap-16 sm:gap-32">
+          {/* Heading customer reviews and underline and snake image */}
+          <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
+            <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+              What our{" "}
+              <span className="relative px-2">
+                customers{" "}
+                <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-6 text-green-500" />{" "}
+              </span>
+              say
+            </h2>
+            {/* snake image order according to screen width */}
+            <img
+              src="/snake-2.png"
+              className="order-0 w-24 lg:order-2"
+              alt=""
+            />
+          </div>
+          <div className="bg-pink-300 mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16">
+            {/* customer-1 review */}
+            <div className="bg-cyan-800 flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              {/* Stars container */}
+              <div className="bg-amber-800 flex gap-0.5 mb-2">
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+              </div>
+              {/* Paragraph container */}
+              <div className="bg-purple-950 text-lg leading-8">
+                <p>
+                  "The case feels durable and I even got a compliment on the
+                  design. Had the case for two and a half months now and{" "}
+                  <span className="p-0.5 bg-slate-800 text-white">
+                    the image is super clear
+                  </span>
+                  , on the case I had before, the image started fading into
+                  yellow-ish color after a couple weeks. Love it."
+                </p>
+              </div>
+              {/* customer image, name and verified container  */}
+              <div className="flex gap-4 mt-2 bg-yellow-600">
+                <img
+                  src="/users/user-1.png"
+                  className="rounded-full h-12 w-12 object-cover"
+                  alt=""
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Jonathan</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="h-4 w-4 stroke-[3px] text-green-600" />
+                    <p className="text-sm">Verified Purchase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* customer-2 review */}
+            <div className="bg-cyan-800 flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
+              {/* Stars container */}
+              <div className="bg-amber-800 flex gap-0.5 mb-2">
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+                <Star className="h-5 w-5 text-green-600 fill-green-600" />
+              </div>
+              {/* Paragraph container */}
+              <div className="bg-purple-950 text-lg leading-8">
+                <p>
+                  "I usually keep my phone together with my keys in my pocket
+                  and that led to some pretty heavy scratchmarks on all of my
+                  last phone cases. This one, besides a barely noticeable
+                  scratch on the corner,{" "}
+                  <span className="p-0.5 bg-slate-800 text-white">
+                    looks brand new after about half a year
+                  </span>
+                  . I dig it."
+                </p>
+              </div>
+              {/* customer image, name and verified container  */}
+              <div className="flex gap-4 mt-2 bg-yellow-600">
+                <img
+                  src="/users/user-4.jpg"
+                  className="rounded-full h-12 w-12 object-cover"
+                  alt=""
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Josh</p>
+                  <div className="flex gap-1.5 items-center text-zinc-600">
+                    <Check className="h-4 w-4 stroke-[3px] text-green-600" />
+                    <p className="text-sm">Verified Purchase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </section>
     </div>
   );
 }
+// 1:20:42
